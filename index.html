@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Inversiones Raiferma C.A.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-image: url('Fondo raiferma.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        /* PERFIL */
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F57C00 0%, #FF9800 100%);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 700;
+            border: 4px solid white;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .profile-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .profile-bio {
+            font-size: 14px;
+            opacity: 0.9;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        
+        /* LINKS */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 20px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .link-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .link-info {
+            flex: 1;
+        }
+        
+        .link-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+        
+        .link-desc {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .link-arrow {
+            font-size: 20px;
+            opacity: 0.7;
+        }
+        
+        /* COLORES DE CADA LINK */
+        .link-whatsapp .link-icon { background: #25D366; }
+        .link-phone .link-icon { background: #F57C00; }
+        .link-location .link-icon { background: #37474F; }
+        .link-email .link-icon { background: #2196F3; }
+        .link-instagram .link-icon { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .link-facebook .link-icon { background: #1877F2; }
+        .link-web .link-icon { background: #2E7D32; }
+        .link-catalog .link-icon { background: #FFB300; }
+        
+        /* CONTACTO DIRECTO */
+        .direct-contact {
+            margin-top: 35px;
+            text-align: center;
+        }
+        
+        .direct-title {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        
+        .direct-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .direct-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+        
+        .direct-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .direct-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .direct-call {
+            background: #F57C00;
+            color: white;
+        }
+        
+        /* HORARIOS */
+        .schedule {
+            margin-top: 35px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .schedule-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* FOOTER */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .footer-tagline {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- PERFIL -->
+        <div class="profile">
+            <div class="profile-pic">R</div>
+            <div class="profile-name">Inversiones Raiferma C.A.</div>
+            <div class="profile-bio">
+                🌾 Donde el campo y la industria se encuentran<br>
+                🚜🏭 Maquinaria, insumos y repuestos
+            </div>
+        </div>
+        
+        <!-- LINKS PRINCIPALES -->
+        <div class="links">
+            
+            <!-- ============ WHATSAPP ============ -->
+            <!-- EDITAR: Cambia "584241234567" por tu número real (solo números, sin espacios ni guiones) -->
+            <a href="https://wa.me/584126723398" class="link link-whatsapp" target="_blank">
+                <div class="link-icon">📱</div>
+                <div class="link-info">
+                    <div class="link-title">WhatsApp</div>
+                    <div class="link-desc">Escríbenos directamente</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+            
+            <!-- ============ TELÉFONO ============ -->
+            <!-- EDITAR: Cambia "584241234567" por tu número real -->
+            <a href="tel:584126723398" class="link link-phone" target="_blank">
+                <div class="link-icon">📞</div>
+                <div class="link-info">
+                    <div class="link-title">Llamadas</div>
+                    <div class="link-desc">Atención telefónica</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+            
+            <!-- ============ UBICACIÓN ============ -->
+            <!-- EDITAR: Cambia el href por tu enlace de Google Maps y el texto de la dirección -->
+            <a href="https://maps.google.com/?q=Tu+Direccion+Completa+Aqui" class="link link-location" target="_blank">
+                <div class="link-icon">📍</div>
+                <div class="link-info">
+                    <div class="link-title">Nuestra Ubicación</div>
+                    <div class="link-desc">Quibor - Lara - Venezuela</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+            
+            <!-- ============ EMAIL ============ -->
+            <!-- EDITAR: Cambia "tu@email.com" por tu correo real -->
+            <a href="mailto:raiferma.org@gmail.com" class="link link-email" target="_blank">
+                <div class="link-icon">✉️</div>
+                <div class="link-info">
+                    <div class="link-title">Correo Electrónico</div>
+                    <div class="link-desc">raiferma.org@gmail.com</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+            
+            <!-- ============ INSTAGRAM ============ -->
+            <!-- EDITAR: Cambia "tu_usuario" por tu usuario de Instagram (sin @) -->
+            <a href="https://instagram.com/agros_raiferma" class="link link-instagram" target="_blank">
+                <div class="link-icon">📷</div>
+                <div class="link-info">
+                    <div class="link-title">Instagram</div>
+                    <div class="link-desc">Síguenos para novidades</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+            
+            <!-- ============ FACEBOOK (OPCIONAL) ============ -->
+            <!-- EDITAR: Si tienes Facebook, cambia el enlace. Si no, puedes borrar esta sección -->
+            <a href="https://facebook.com/tu_pagina" class="link link-facebook" target="_blank">
+                <div class="link-icon">👥</div>
+                <div class="link-info">
+                    <div class="link-title">Facebook</div>
+                    <div class="link-desc">Nuestra página oficial</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+            
+            <!-- ============ CATÁLOGO (OPCIONAL) ============ -->
+            <!-- EDITAR: Si tienes catálogo online, pon el enlace. Si no, puedes borrar esta sección -->
+            <a href="#" class="link link-catalog" target="_blank">
+                <div class="link-icon">📋</div>
+                <div class="link-info">
+                    <div class="link-title">Catálogo de Productos</div>
+                    <div class="link-desc">Ver todo nuestro inventario</div>
+                </div>
+                <div class="link-arrow">›</div>
+            </a>
+
+        </div>
+        
+        <!-- BOTONES DE CONTACTO DIRECTO -->
+        <div class="direct-contact">
+            <div class="direct-title">Contacto Rápido</div>
+            <div class="direct-buttons">
+                <!-- EDITAR: Cambia "584126723398" por tu número de WhatsApp -->
+                <a href="https://wa.me/584126723398" class="direct-btn direct-whatsapp" target="_blank">
+                    💬 WhatsApp
+                </a>
+                <!-- EDITAR: Cambia "584126723398" por tu número de teléfono -->
+                <a href="tel:584126723398" class="direct-btn direct-call" target="_blank">
+                    📞 Llamar
+                </a>
+            </div>
+        </div>
+        
+        <!-- HORARIO DE ATENCIÓN -->
+        <div class="schedule">
+            <div class="schedule-title">🕐 Horario de Atención</div>
+            <!-- EDITAR: Cambia los horarios según tu negocio -->
+            <div class="schedule-item">
+                <span>Lunes - Viernes</span>
+                <span>7:00 AM - 8:00 PM</span>
+            </div>
+            <div class="schedule-item">
+                <span>Sábados</span>
+                <span>9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="schedule-item">
+                <span>Domingos</span>
+                <span>9:00 AM - 6:00 PM</span>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-logo">🌾 Inversiones Raiferma C.A.</div>
+            <div class="footer-tagline">"Donde el campo y la industria se encuentran"</div>
+        </div>
+        
+    </div>
+</body>
+</html>
